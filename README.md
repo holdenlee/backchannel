@@ -7,7 +7,7 @@ I imagine that someone could turn a YouTube video into a commentable video in th
 This extends to other media besides videos. What if we did the same for every major textbook, ordered by page number? Reading a textbook no longer has to be a very independent activity; you could be connected to the corpus of all questions and ideas that other people have had while reading the textbook. A reading group’s best friend!
 (Note: I am actually implementing this for readings first because it doesn't involve embedding video.)
 
-#education #<->Piazza #<->TodaysMeet #<->Concrete Mathematics, Graham, Patashnik, Knuth (one of my favorite math books; they incorporated class comments into the margins of their textbook) ~holden1@mit.edu 
+Tags: #education #<->Piazza #<->TodaysMeet #<->Concrete Mathematics, Graham, Patashnik, Knuth (one of my favorite math books; they incorporated class comments into the margins of their textbook) ~holden1@mit.edu 
 
 Configuration
 =============
