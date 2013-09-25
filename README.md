@@ -16,11 +16,17 @@ Tags: #education #<->Piazza #<->TodaysMeet #<->Concrete Mathematics, Graham, Pat
 Configuration
 =============
 Change backchannel/settings.py:
+
     'NAME': '<file path>/database.db'
+
 First make the database:
+
     python manage.py syncdb
+
 Then run the server:
+
     python manage.py runserver
+
 Admin: Go to http://localhost:8000/admin/
 Go to http://localhost:8000/comments/ to play around.
 
