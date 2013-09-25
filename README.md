@@ -1,4 +1,4 @@
-backchannel
+Backchannel
 ===========
 
 Backchannel for online lectures -- A simple customizable interface that has a video (possibly from YouTube) on one side and a list of questions and comments that people have about the video on the other side. At any time, a watcher can pause the video and type a question or comment, and it will be arranged chronologically in the document, with the video’s time stamp. People can upvote and downvote questions and comments.
@@ -13,8 +13,31 @@ This extends to other media besides videos. What if we did the same for every ma
 
 Tags: #education #<->Piazza #<->TodaysMeet #<->Concrete Mathematics, Graham, Patashnik, Knuth (one of my favorite math books; they incorporated class comments into the margins of their textbook) ~holden1@mit.edu 
 
+Current progress
+----------------
+Right now you can log in, add a comment, filter comments, and edit your comments. There is voting but votes are not linked to the user.
+Backchannel refreshes every 2 seconds.
+
+Currently the project uses SQLite 3.
+
+TODO:
+* Display tags.
+* Display from x to y, and at most n entries.
+* Be able to respond to comments.
+* Make categories for comments.
+* Make a database from a text file.
+* Associate users with votes.
+* Implement multiple "circles" for different videos/readings. Give users permissions.
+* Embed YouTube video and extract time
+* Allow users to choose a color, and have their comments show up with that color background.
+* Make a nice GUI.
+* Allow a teacher to choose video link.
+* Move to MySQL.
+
+BUG: Sometimes the left pane will vanish when you change the database by clicking a link.
+
 Configuration
-=============
+-------------
 Change backchannel/settings.py:
 
     'NAME': '<file path>/database.db'
