@@ -1,0 +1,32 @@
+﻿{% load staticfiles %}
+
+<table style="width: 100%" cellpadding="5" cellspacing="0">
+    <tr>
+    	<td>Time</td>
+    	<td>User</td>
+    	<td>Comment</td>
+    	<td>Resolved?</td>
+    </tr>
+    {% for comment in comments_list %}
+    	<tr>
+    		<td valign="top"><a href="{% url 'comments:detail' comment.id %}">{{ comment.video_time}}</a></td>
+    		<td valign="top">{{ comment.user }}</td>
+    		<td>{{ comment.text }}<br />
+			{% if comment.user == request.user %}
+			Edit
+			<br />
+			{% endif %}
+    			Reply <a href="{% url 'comments:upvote' comment.id %}" id="upvote">Upvote</a> 
+        		<a href="{% url 'comments:downvote' comment.id %}">Downvote</a> Votes: {{comment.votes}}
+    		</td>
+    		<td>
+    		{% if comment.resolved %}
+				<img alt="Resolved" src="{% static 'comments/images/check.gif' %}">        
+        	{% else %}
+        		<img alt="Unresolved" src="{% static 'comments/images/unresolved.gif' %}"><br />
+        		<a href="{% url 'comments:resolve' comment.id %}">Resolve</a>
+        	{% endif %}  
+    		</td>
+    	</tr>
+	    {% endfor %}
+    </table>

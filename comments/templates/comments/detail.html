@@ -1,0 +1,50 @@
+﻿{% load staticfiles %}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% if user != comment.user %}
+<p>{{ comment.text }}</p>
+
+<p>Time: {{ comment.video_time }}</p>
+
+<p>User: {{ comment.user }}</p>
+
+<p>Resolved: {% if comment.resolved %}
+				<img alt="Resolved" src="{% static 'comments/images/check.gif' %}">        
+        	{% else %}
+        		<img alt="Unresolved" src="{% static 'comments/images/unresolved.gif' %}"><br />
+        		<a href="{% url 'comments:resolve' comment.id %}">Resolve</a>
+        	{% endif %}  </p>
+
+<p>Tags: {{ comment.tags }}</p>
+{% endif %}
+
+{% if user == comment.user %}
+	<form id="editform" action="{% url 'comments:edit' comment.id %}"  method="post">
+		{% csrf_token %}
+		<textarea rows="10" style="width:80%" name="comment_text">{{comment.text}}</textarea><br>
+
+<p>Time: {{ comment.video_time }}</p>
+
+<p>User: {{ comment.user }}</p>
+
+<p>Tags: <input type="text" name="tags" value={{ comment.tags }}></p>
+
+<p>Resolved: 
+{% if comment.resolved %}
+	<input type="radio" name="resolved" value="yes" checked="checked"><img alt="Resolved" src="{% static 'comments/images/check.gif' %}">
+	<input type="radio" name="resolved" value="no" autocomplete="off"><img alt="Unresolved" src="{% static 'comments/images/unresolved.gif' %}">
+{% else %}
+	<input type="radio" name="resolved" value="yes" autocomplete="off"><img alt="Resolved" src="{% static 'comments/images/check.gif' %}">
+	<input type="radio" name="resolved" value="no" checked="checked"><img alt="Unresolved" src="{% static 'comments/images/unresolved.gif' %}">
+{% endif %}
+</p>
+
+<input id="editsubmit" type="submit" value="Update"/>
+<!--http://stackoverflow.com/questions/3303675/how-to-make-a-input-type-button-act-like-a-hyperlink-and-redirect-using-a-get-re
+<input type="button" value="Cancel" 
+    onclick="window.location='{% url 'comments:fetch_comments'%}';" />-->
+
+</form>
+
+{% endif %}
+<a href='{% url 'comments:index' %}'>Back</a>

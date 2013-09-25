@@ -1,0 +1,85 @@
+.center
+{	
+	text-align:center;
+}
+
+body
+{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	color: #000000;
+	margin:0;
+    padding:0;
+}
+
+#topbar
+{
+	background-color:#663300;
+	height:30px;
+	color:#FFFFFF;
+}
+
+.sitetitle
+{
+	color:#FFFFFF;
+	float: left;
+	display: block;
+	padding: 6px 10px 12px;
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1;
+}
+
+.right
+{
+	float:right
+}
+
+.navbar
+{
+	list-style-type:none;
+	margin:9px;
+	padding:0;
+}
+.navitem
+{
+	display:inline;
+	padding:5px;
+}
+
+.toplink
+{
+	color:#FFFFFF;
+}
+
+.span-box {
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+margin-top: 15px;
+padding-top: 15px;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 15px;
+background-color: white;
+border: 1px solid #D9D9D9;
+position: relative;
+left: 0px;
+}
+
+.dualpanel
+{
+	vertical-align:top;
+}
+
+.leftpane
+{
+	border-right:1px solid black
+}
